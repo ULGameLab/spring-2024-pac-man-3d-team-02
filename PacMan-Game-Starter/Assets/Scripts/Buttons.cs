@@ -29,7 +29,7 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
-    public void ExitToGameOver() {
-        SceneManager.LoadScene("GameOver");
+    public void ToStartScreen() {
+        SceneManager.LoadScene("StartScreen");
     }
 }
