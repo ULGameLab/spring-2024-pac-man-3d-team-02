@@ -17,6 +17,7 @@ public class Buttons : MonoBehaviour
         
     }
 
+    //Onclick function to quit game
     public void QuitGameButton() {
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
@@ -25,11 +26,23 @@ public class Buttons : MonoBehaviour
         #endif
     }
 
+    //Onclick function to go to credits screen
     public void CreditsGameButton() {
         SceneManager.LoadScene("Credits");
     }
 
+    //Onclick function to go to start screen
     public void ToStartScreen() {
         SceneManager.LoadScene("StartScreen");
+    }
+
+    //Onclick function to go to button credits screen
+    public void ToButtonCreditsScreen() {
+        SceneManager.LoadScene("ButtonCredits");
+    }
+
+    //Onclick function to go to background credits screen
+    public void ToBakgroundCreditsScreen() {
+        SceneManager.LoadScene("BackgroundCredits");
     }
 }
