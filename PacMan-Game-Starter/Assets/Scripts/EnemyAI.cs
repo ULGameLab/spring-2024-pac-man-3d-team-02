@@ -8,7 +8,13 @@ public enum EnemyState { ATTACK, CHASE, MOVING, DEFAULT};
 
 public class EnemyAI : MonoBehaviour
 {
-
+    GameObject player;
+    NavMeshAgent agent;
+    public float chaseDistance = 20.0f;
+    protected EnemyState state = EnemyState.DEFAULT;
+    protected Vector3 destination = new Vector3(0, 0, 0);
+    Animator animator;
+    AudioSource myaudio;
 
 
     // Start is called before the first frame update
