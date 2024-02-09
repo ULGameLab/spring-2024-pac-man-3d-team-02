@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     private GameObject parentObject;
     public int maxEnemyCount = 7;
     public float secondsBetweenSpawn = 2;
@@ -23,18 +24,21 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
+        currentEnemyCount = CountEnemy();
+
         if (elapsedTime > secondsBetweenSpawn && currentEnemyCount < maxEnemyCount)
         {
-            elapsedTime = 0;
-            Vector3 spawnPosition = RandomPositionAroundPlayer();
-            GameObject newEnemy = (GameObject)Instantiate(enemyPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
-            newEnemy.transform.SetParent(parentObject.transform);
-            currentEnemyCount = CountEnemy();
+            for (int i = 0; i < enemyPrefabs.Length; i++)
+            {
+                elapsedTime = 0;
+                Vector3 spawnPosition = RandomPositionAroundPlayer();
+                Debug.Log(i.ToString());
+                GameObject newEnemy = (GameObject)Instantiate(enemyPrefabs[i], spawnPosition, Quaternion.Euler(0, 0, 0));
+                newEnemy.transform.SetParent(parentObject.transform);
+                currentEnemyCount = CountEnemy();
 
-
-        }
-
-
+            }
+        }   
     }
 
     private int CountEnemy()
