@@ -19,7 +19,7 @@ public class SimpleController : MonoBehaviour
 
     private void Start()
     {
-        
+        controller = gameObject.GetComponent<CharacterController>();
     }
 
     void Update()
