@@ -33,7 +33,9 @@ public class SimpleController : MonoBehaviour
         }else if(!groundedPlayer && controller.isGrounded){
             animator.SetFloat ("Vertical", 0);
             groundedPlayer = true;
-        }        
+        }
+
+        
 
         //movement
         Vector3 cameraRight = Vector3.ProjectOnPlane (Camera.main.transform.right, Vector3.up).normalized;
@@ -62,5 +64,16 @@ public class SimpleController : MonoBehaviour
         }else{
             animator.SetBool ("Sliding", false);
         }
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
+    }
+    public void LaunchPlayer(float launchForce)
+    {
+        // Apply an immediate upward force to the player
+        playerVelocity.y = launchForce;
+        groundedPlayer = false; // The player is no longer grounded once launched
+
+        // You may want to handle animations or other effects here
+        animator.SetFloat("Vertical", playerVelocity.y);
     }
 }
