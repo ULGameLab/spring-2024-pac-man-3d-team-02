@@ -45,4 +45,12 @@ public class Buttons : MonoBehaviour
     public void ToBakgroundCreditsScreen() {
         SceneManager.LoadScene("BackgroundCredits");
     }
+
+    public void ToBarsCreditsScreen() {
+        SceneManager.LoadScene("BarsCredits");
+    }
+
+    public void ToCreatorsScreen() {
+        SceneManager.LoadScene("Creators");
+    }
 }
