@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fruit
+  - Pickup
+  - Enemy
+  - Pellet
+  - GoodPellet
+  - ToxicPellet
   layers:
   - Default
   - TransparentFX
