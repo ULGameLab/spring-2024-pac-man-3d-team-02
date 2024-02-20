@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
             HealthBarImage = HealthBar.transform.GetComponent<Image>();
         }
 
+
         SetHealthBarValue(health);
 
 
@@ -35,16 +36,13 @@ public class Player : MonoBehaviour
         SetStaminaBarValue(stamina);
 
         hasMegachomp = false;
-
     }
-
-
-    
 
     // Update is called once per frame
     void Update()
     {
         SetHealthBarValue(health/100);
+
         SetStaminaBarValue(stamina/100);
        
         if(stamina <= 50)
@@ -84,7 +82,6 @@ public class Player : MonoBehaviour
     public static float GetHealthBarValue() {
         return HealthBarImage.fillAmount;
     }
-
 
     public static void SetStaminaBarValue(float value)
     {
@@ -168,5 +165,4 @@ public class Player : MonoBehaviour
             }
         }
     }
-   
 }
