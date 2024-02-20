@@ -53,4 +53,8 @@ public class Buttons : MonoBehaviour
     public void ToCreatorsScreen() {
         SceneManager.LoadScene("Creators");
     }
+
+    public void ToMainGame() {
+        SceneManager.LoadScene("Main Game");
+    }
 }
