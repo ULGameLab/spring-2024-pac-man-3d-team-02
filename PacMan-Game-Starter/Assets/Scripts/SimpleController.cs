@@ -13,7 +13,7 @@ public class SimpleController : MonoBehaviour
 
     private Vector3 playerVelocity;
     private bool groundedPlayer = true;
-    private float playerSpeed = 7.0f;
+    public static float playerSpeed = 7.0f;
     private float jumpHeight = 1.5f;
     private float gravityValue = -9.81f;
     private bool isJumping = false;
@@ -137,6 +137,8 @@ public class SimpleController : MonoBehaviour
             // Reset the Vertical animator parameter if needed
             animator.SetFloat("Vertical", 0);
         }
+
+       
     }
 }
 
