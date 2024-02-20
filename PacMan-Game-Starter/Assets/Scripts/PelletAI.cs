@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class PelletAI : MonoBehaviour
 {
     public GameObject drop;
@@ -11,10 +13,12 @@ public class PelletAI : MonoBehaviour
     float elapsedTime = 0;
     int currentPelletCount = 0;
     public float destroyTime = 4.0f;
+    AudioSource myaudio;
 
     // Start is called before the first frame update
     void Start()
     {
+        myaudio = GetComponent<AudioSource>();
         parentObject = transform.gameObject;
         currentPelletCount = countPellets();
     }
@@ -31,15 +35,16 @@ public class PelletAI : MonoBehaviour
             Vector3 pellPos = new Vector3(parentObject.transform.position.x,parentObject.transform.position.y + 0.5f, parentObject.transform.position.z);
             GameObject currentPellet = Instantiate(drop, pellPos, Quaternion.identity);
             currentPelletCount = countPellets();
-            Destroy(currentPellet,destroyTime);
+            Destroy(currentPellet, destroyTime);
         }
     }
 
     private int countPellets()
     {
         int count = 0;
-        GameObject[] pellets = GameObject.FindGameObjectsWithTag("Pellet");
+        GameObject[] pellets = GameObject.FindGameObjectsWithTag("ToxicPellet");
         count = pellets.Length;
         return count;
     }
+
 }

@@ -8,6 +8,8 @@ TagManager:
   - Pickup
   - Enemy
   - Pellet
+  - GoodPellet
+  - ToxicPellet
   layers:
   - Default
   - TransparentFX

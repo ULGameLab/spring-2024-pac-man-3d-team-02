@@ -90,28 +90,25 @@ public class EnemyAI : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        //if (col.gameObject.CompareTag("Bullet"))
-        //{
-        //    player.GetComponent<CountScore>().AddScore(10);
-        //    // Disable all Renderers and Colliders
-        //    Renderer[] allRenderers = gameObject.GetComponentsInChildren<Renderer>();
-        //    foreach (Renderer c in allRenderers) c.enabled = false;
-        //    Collider[] allColliders = gameObject.GetComponentsInChildren<Collider>();
-        //    foreach (Collider c in allColliders) c.enabled = false;
+        if (col.gameObject.CompareTag("Player") && Player.hasMegachomp == true)
+        {
+            
+            // Disable all Renderers and Colliders
+            Renderer[] allRenderers = gameObject.GetComponentsInChildren<Renderer>();
+            foreach (Renderer c in allRenderers) c.enabled = false;
+            Collider[] allColliders = gameObject.GetComponentsInChildren<Collider>();
+            foreach (Collider c in allColliders) c.enabled = false;
 
-        //    gameObject.GetComponent<ParticleSystemRenderer>().enabled = true;
-        //    StartBloodSplatter();
-
-        //    StartCoroutine(PlayAndDestroy(myaudio.clip.length));
-        //}
+            StartCoroutine(PlayAndDestroy(myaudio.clip.length));
+        }
     }
 
-    //private IEnumerator PlayAndDestroy(float waitTime)
-    //{
-    //    myaudio.Play();
-    //    yield return new WaitForSeconds(waitTime);
-    //    Destroy(gameObject);
-    //}
+    private IEnumerator PlayAndDestroy(float waitTime)
+    {
+        myaudio.Play();
+        yield return new WaitForSeconds(waitTime);
+        Destroy(gameObject);
+    }
 
 
 }

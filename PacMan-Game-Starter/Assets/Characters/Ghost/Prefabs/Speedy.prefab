@@ -498,7 +498,8 @@ GameObject:
   - component: {fileID: 82259544266748006}
   - component: {fileID: -3522913659250226828}
   - component: {fileID: 5066083226115513149}
-  - component: {fileID: 8059039940031474072}
+  - component: {fileID: 6768414365789224153}
+  - component: {fileID: 9128814676520127860}
   m_Layer: 10
   m_Name: Speedy
   m_TagString: Enemy
@@ -539,8 +540,8 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.56
@@ -579,12 +580,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8bdb2d15c686a9a45ac8f6aa3f2ca4d2, type: 3}
-  m_Resource: {fileID: 8300000, guid: 8bdb2d15c686a9a45ac8f6aa3f2ca4d2, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 688144e9dda2e2a4f909ef478d97cd20, type: 3}
+  m_Resource: {fileID: 8300000, guid: 688144e9dda2e2a4f909ef478d97cd20, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -895,7 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 20
---- !u!114 &8059039940031474072
+--- !u!114 &6768414365789224153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -908,9 +909,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 2802627292044744404, guid: 1e13e8545cc817748a00053e3b3e555d, type: 3}
-  secondsBetweenSpawn: 2
-  maxPelletCount: 6
-  destroyTime: 10
+  secondsBetweenSpawn: 3
+  maxPelletCount: 5
+  destroyTime: 9
+--- !u!54 &9128814676520127860
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399582607522876}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1447265923821120
 GameObject:
   m_ObjectHideFlags: 0
