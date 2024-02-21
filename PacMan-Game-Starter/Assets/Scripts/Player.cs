@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
             SimpleController.playerSpeed = maxPlayerSpeed;
         }
 
-        if(Input.GetMouseButtonDown(0) && hasMegachomp == false)
+        if(Input.GetKeyDown(KeyCode.Q) && hasMegachomp == false)
         {
             hasMegachomp = true;
             if (stamina >= 50 ) { stamina -= 50; } else { stamina = 0; }
