@@ -12239,6 +12239,7 @@ GameObject:
   - component: {fileID: 706571639}
   - component: {fileID: 706571638}
   - component: {fileID: 706571637}
+  - component: {fileID: 706571640}
   m_Layer: 5
   m_Name: PelletCount
   m_TagString: Untagged
@@ -12330,6 +12331,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &706571640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706571635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ace1c2a5b41bd45bc098b94a9bd235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countPellets: {fileID: 92016248}
 --- !u!1001 &707799278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32343,9 +32357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54ed73064160404eb475da0e248828b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: {fileID: 772991503}
+  HealthBar: {fileID: 340635229}
   maxPlayerSpeed: 7
-  StaminaBar: {fileID: 1419488877}
+  StaminaBar: {fileID: 1711318866}
 --- !u!1001 &2090632295
 PrefabInstance:
   m_ObjectHideFlags: 0

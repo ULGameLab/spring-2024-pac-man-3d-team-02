@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            SetStaminaBarColor(Color.green);
+            SetStaminaBarColor(Color.blue);
         }
     }
 
