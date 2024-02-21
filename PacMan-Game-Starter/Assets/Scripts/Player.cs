@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if(hasMegachomp == false) {
             if (other.gameObject.CompareTag("Enemy")) {
-                health -= 1.0f;
+                health -= 5.0f;
                 if (health < 0) health = 0;
             }
             else {
