@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if(hasMegachomp == false) {
             if (other.gameObject.CompareTag("Enemy")) {
-                health -= 0.01f;
+                health -= 1.0f;
                 if (health < 0) health = 0;
             }
             else {
@@ -125,13 +125,13 @@ public class Player : MonoBehaviour
             }
         }
         if(other.gameObject.CompareTag("GoodPellet")) {
-            health += 5.0f;
-            stamina += 10.0f;
+            if (health < 100) { health += 5.0f; if (health > 100) { health = 100; } }
+            if (stamina < 100) { stamina += 10.0f; if (stamina > 100) { stamina = 100; } }
         }
         if(other.gameObject.CompareTag("Fruit")) {
-            health += 10.0f;
-            stamina += 10.0f;
-    }
+            if (health < 100) { health += 5.0f; if (health > 100) { health = 100; } }
+            if (stamina < 100) { stamina += 10.0f; if (stamina > 100) { stamina = 100; } }
+        }
         if(hasMegachomp == true) {
             if(other.gameObject.CompareTag("ToxicPellet")) {
                 health += 0;
@@ -140,6 +140,7 @@ public class Player : MonoBehaviour
         else {
             if(other.gameObject.CompareTag("ToxicPellet")) {
                 health -= 10.0f;
+                if (health < 0) health = 0;
             }
         }
     }

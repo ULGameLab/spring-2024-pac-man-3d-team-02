@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PelletCount : MonoBehaviour
 {
     public static int numPelletsCollected = 0;
-
     public TMP_Text countPellets;
 
     // Start is called before the first frame update
@@ -19,18 +20,34 @@ public class PelletCount : MonoBehaviour
         countPellets.text = numPelletsCollected.ToString();
     }
 
+    void Update()
+    {
+
+    }
+
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("GoodPellet")) {
-            numPelletsCollected += 1;
+            AddScore(1);
         }
         if(other.gameObject.CompareTag("ToxicPellet")) {
             //if mega comp numPelletsCollected += 0
+            if (Player.hasMegachomp == true)
+            {
+                AddScore(0);
+            }
             if(numPelletsCollected == 0) {
-                numPelletsCollected += 0;
+                AddScore(0);
             }
             else {
-                numPelletsCollected -= 1;
+                AddScore(-1);
             }
         }
     }
+
+    public void AddScore(int points)
+    {
+        numPelletsCollected += points;
+        countPellets.text = numPelletsCollected.ToString();
+    }
+
 }

@@ -12350,7 +12350,6 @@ GameObject:
   - component: {fileID: 706571639}
   - component: {fileID: 706571638}
   - component: {fileID: 706571637}
-  - component: {fileID: 706571640}
   m_Layer: 5
   m_Name: PelletCount
   m_TagString: Untagged
@@ -12442,19 +12441,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &706571640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706571635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9ace1c2a5b41bd45bc098b94a9bd235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countPellets: {fileID: 92016248}
 --- !u!1001 &707799278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30815,7 +30801,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 706571636}
-  - {fileID: 2084206827}
   - {fileID: 772991504}
   - {fileID: 1419488878}
   m_Father: {fileID: 0}
@@ -31304,18 +31289,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2839043205511675432, guid: 3eedaa8c34506aa45848dbf7750c56ca, type: 3}
   m_PrefabInstance: {fileID: 2092379713}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2017061121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017061115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f606cff4e599d384ca469d99ec4b937f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!45 &2017061126
 Skybox:
   m_ObjectHideFlags: 0
@@ -31325,6 +31298,34 @@ Skybox:
   m_GameObject: {fileID: 2017061115}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: e492309147b61684894e8ba213fdc950, type: 2}
+--- !u!114 &2017061131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017061115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f54ed73064160404eb475da0e248828b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthBar: {fileID: 340635229}
+  maxPlayerSpeed: 7
+  StaminaBar: {fileID: 1711318866}
+--- !u!114 &2017061132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017061115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ace1c2a5b41bd45bc098b94a9bd235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countPellets: {fileID: 92016248}
 --- !u!1 &2022502874
 GameObject:
   m_ObjectHideFlags: 0
@@ -32517,53 +32518,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4402489184050406, guid: e7dd6b71586b8c845a4d1909d1d03899, type: 3}
   m_PrefabInstance: {fileID: 2079571110}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2084206826
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2084206827}
-  - component: {fileID: 2084206828}
-  m_Layer: 0
-  m_Name: HealthManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2084206827
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084206826}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.868559, y: -4.0306025, z: -32.993805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1988403524}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2084206828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084206826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f54ed73064160404eb475da0e248828b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthBar: {fileID: 340635229}
-  maxPlayerSpeed: 7
-  StaminaBar: {fileID: 1711318866}
 --- !u!1001 &2090632295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32736,10 +32690,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2839043205511675432, guid: 3eedaa8c34506aa45848dbf7750c56ca, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2017061121}
+      addedObject: {fileID: 2017061126}
     - targetCorrespondingSourceObject: {fileID: 2839043205511675432, guid: 3eedaa8c34506aa45848dbf7750c56ca, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2017061126}
+      addedObject: {fileID: 2017061131}
+    - targetCorrespondingSourceObject: {fileID: 2839043205511675432, guid: 3eedaa8c34506aa45848dbf7750c56ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2017061132}
   m_SourcePrefab: {fileID: 100100000, guid: 3eedaa8c34506aa45848dbf7750c56ca, type: 3}
 --- !u!1001 &2093762624
 PrefabInstance:
