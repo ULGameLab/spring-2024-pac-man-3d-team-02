@@ -11,7 +11,8 @@ public class GoodPellets : MonoBehaviour
     public float secondsBetweenSpawn = 2;
     float elapsedTime = 0;
     int curGoodPell = 0;
- 
+    public float destroyTime = 5.0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class GoodPellets : MonoBehaviour
     void Update()
     {
         elapsedTime = Time.deltaTime;
+        curGoodPell = CountGoodPell();
         if (elapsedTime < secondsBetweenSpawn && curGoodPell < maxGoodPell) 
         {
             elapsedTime = 0;
@@ -32,6 +34,7 @@ public class GoodPellets : MonoBehaviour
             GameObject newGoodPell = (GameObject)Instantiate(goodPellPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
             newGoodPell.transform.SetParent(parentObject.transform);
             curGoodPell = CountGoodPell();
+            Destroy(newGoodPell,destroyTime);
         }
     }
 

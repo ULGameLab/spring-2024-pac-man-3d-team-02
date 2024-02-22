@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
 
     GameObject player;
     NavMeshAgent agent;
-    public float chaseDistance = 20.0f;
+    public float chaseDistance = 35.0f;
     protected EnemyState state = EnemyState.DEFAULT;
     protected Vector3 destination = new Vector3(0, 0, 0);
     Animator animator;

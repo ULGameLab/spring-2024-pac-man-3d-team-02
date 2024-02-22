@@ -17,15 +17,20 @@ public class Player : MonoBehaviour
     public GameObject StaminaBar;
     private static Image StaminaImage;
     public static float stamina = 100.0f;
+    private static int fruit;
+    
+    AudioSource myaudio;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(HealthBar != null) {
+        myaudio = GetComponent<AudioSource>();
+
+        if (HealthBar != null) {
             HealthBarImage = HealthBar.transform.GetComponent<Image>();
         }
 
-
+        fruit = 0;
         SetHealthBarValue(health);
 
 
@@ -44,6 +49,11 @@ public class Player : MonoBehaviour
     {
         if(health == 0) {
             SceneManager.LoadScene("GameOver");
+        }
+
+        if(fruit >= 3)
+        {
+            SceneManager.LoadScene("WinGame");
         }
 
         SetHealthBarValue(health/100);
@@ -120,6 +130,7 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if(hasMegachomp == false) {
             if (other.gameObject.CompareTag("Enemy")) {
+                myaudio.Play();
                 health -= 5.0f;
                 if (health < 0) health = 0;
             }
@@ -136,6 +147,8 @@ public class Player : MonoBehaviour
         if(other.gameObject.CompareTag("Fruit")) {
             if (health < 100) { health += 5.0f; if (health > 100) { health = 100; } }
             if (stamina < 100) { stamina += 10.0f; if (stamina > 100) { stamina = 100; } }
+            fruit++;
+            if (fruit > 3) {  fruit = 3; }
         }
         if(hasMegachomp == true) {
             if(other.gameObject.CompareTag("ToxicPellet")) {
@@ -171,4 +184,5 @@ public class Player : MonoBehaviour
             }
         }
     }
+
 }

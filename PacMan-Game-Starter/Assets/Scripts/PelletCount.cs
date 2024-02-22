@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class PelletCount : MonoBehaviour
@@ -29,13 +28,18 @@ public class PelletCount : MonoBehaviour
         if(other.gameObject.CompareTag("GoodPellet")) {
             AddScore(1);
         }
+
+        if (other.gameObject.CompareTag("Fruit"))
+        {
+            AddScore(10);
+        }
+
         if(other.gameObject.CompareTag("ToxicPellet")) {
             //if mega comp numPelletsCollected += 0
             if (Player.hasMegachomp == true)
             {
                 AddScore(0);
-            }
-            if(numPelletsCollected == 0) {
+            }else if(numPelletsCollected == 0) {
                 AddScore(0);
             }
             else {
