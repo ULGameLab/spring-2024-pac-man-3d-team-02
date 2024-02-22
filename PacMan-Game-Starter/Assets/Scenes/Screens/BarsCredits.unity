@@ -736,6 +736,7 @@ GameObject:
   - component: {fileID: 1244118603}
   - component: {fileID: 1244118602}
   - component: {fileID: 1244118601}
+  - component: {fileID: 1244118604}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -817,6 +818,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1244118604
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244118600}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5096a02f9730b5041be6999c2b6fe555, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5096a02f9730b5041be6999c2b6fe555, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1386164731
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,7 +972,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Buttons by jcomp on Freepik: \r\nhttps://www.freepik.com/free-vector/button-set-designed-game-user-interface-gui-illustration-video-games-computers_17631608.htm#query=video%20game%20buttons&position=4&from_view=search&track=ais&uuid=98c9805a-1d28-44ae-aaac-fb299dd65239"
+  m_text: 'Health and stamina bars/pellet scores by Freepik:
+
+    https://www.freepik.com/free-vector/hand-drawn-video-game-set-elements_40484551.htm#page=3&query=health%20bar%20jcomp&position=37&from_view=search&track=ais&uuid=60f239fe-1ee6-477a-9ecf-2dc58edf3892'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca5d2319433a3ea4ca5d83d5a7f3f171, type: 2}
   m_sharedMaterial: {fileID: -3487434143108478103, guid: ca5d2319433a3ea4ca5d83d5a7f3f171, type: 2}

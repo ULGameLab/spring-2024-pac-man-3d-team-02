@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -16,15 +17,20 @@ public class Player : MonoBehaviour
     public GameObject StaminaBar;
     private static Image StaminaImage;
     public static float stamina = 100.0f;
+    private static int fruit;
+    
+    AudioSource myaudio;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(HealthBar != null) {
+        myaudio = GetComponent<AudioSource>();
+
+        if (HealthBar != null) {
             HealthBarImage = HealthBar.transform.GetComponent<Image>();
         }
 
-
+        fruit = 0;
         SetHealthBarValue(health);
 
 
@@ -41,6 +47,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health == 0) {
+            SceneManager.LoadScene("GameOver");
+        }
+
+        if(fruit >= 3)
+        {
+            SceneManager.LoadScene("WinGame");
+        }
+
         SetHealthBarValue(health/100);
 
         SetStaminaBarValue(stamina/100);
@@ -53,7 +68,7 @@ public class Player : MonoBehaviour
             SimpleController.playerSpeed = maxPlayerSpeed;
         }
 
-        if(Input.GetMouseButtonDown(0) && hasMegachomp == false)
+        if(Input.GetKeyDown(KeyCode.Q) && hasMegachomp == false)
         {
             hasMegachomp = true;
             if (stamina >= 50 ) { stamina -= 50; } else { stamina = 0; }
@@ -97,7 +112,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            SetStaminaBarColor(Color.green);
+            SetStaminaBarColor(Color.blue);
         }
     }
 
@@ -115,7 +130,8 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if(hasMegachomp == false) {
             if (other.gameObject.CompareTag("Enemy")) {
-                health -= 0.01f;
+                myaudio.Play();
+                health -= 5.0f;
                 if (health < 0) health = 0;
             }
             else {
@@ -125,13 +141,15 @@ public class Player : MonoBehaviour
             }
         }
         if(other.gameObject.CompareTag("GoodPellet")) {
-            health += 5.0f;
-            stamina += 10.0f;
+            if (health < 100) { health += 5.0f; if (health > 100) { health = 100; } }
+            if (stamina < 100) { stamina += 10.0f; if (stamina > 100) { stamina = 100; } }
         }
         if(other.gameObject.CompareTag("Fruit")) {
-            health += 10.0f;
-            stamina += 10.0f;
-    }
+            if (health < 100) { health += 5.0f; if (health > 100) { health = 100; } }
+            if (stamina < 100) { stamina += 10.0f; if (stamina > 100) { stamina = 100; } }
+            fruit++;
+            if (fruit > 3) {  fruit = 3; }
+        }
         if(hasMegachomp == true) {
             if(other.gameObject.CompareTag("ToxicPellet")) {
                 health += 0;
@@ -140,6 +158,7 @@ public class Player : MonoBehaviour
         else {
             if(other.gameObject.CompareTag("ToxicPellet")) {
                 health -= 10.0f;
+                if (health < 0) health = 0;
             }
         }
     }
@@ -165,4 +184,5 @@ public class Player : MonoBehaviour
             }
         }
     }
+
 }

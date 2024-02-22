@@ -6,25 +6,31 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StartScreen.unity
+    path: Assets/Scenes/Screens/StartScreen.unity
     guid: fe90c0e0dba86924a8bad8b728b23163
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/Scenes/Screens/GameOver.unity
     guid: d85dd33c7d78a6a4ea362afcef44248d
   - enabled: 1
-    path: Assets/Scenes/Credits.unity
+    path: Assets/Scenes/Screens/Credits.unity
     guid: 662fb2f1bd2515e49851a037275dfc48
   - enabled: 1
-    path: Assets/Scenes/ButtonCredits.unity
+    path: Assets/Scenes/Screens/ButtonCredits.unity
     guid: fb4a8f521f7de9242b9eac1a5097aa13
   - enabled: 1
-    path: Assets/Scenes/BackgroundCredits.unity
+    path: Assets/Scenes/Screens/BackgroundCredits.unity
     guid: 60ea42b4e5a177941b8aab4e5d108d9c
   - enabled: 1
-    path: Assets/Scenes/BarsCredits.unity
+    path: Assets/Scenes/Screens/BarsCredits.unity
     guid: 03283609eaae6cc428fe99dcefe26d2f
   - enabled: 1
-    path: Assets/Scenes/Creators.unity
+    path: Assets/Scenes/Screens/WinGame.unity
+    guid: e10c0cc1023d6fc4f8ba23c25c89b7a4
+  - enabled: 1
+    path: Assets/Scenes/Screens/Creators.unity
     guid: fedbf8dbcb3d7fc43b0b8233b1e0d6ef
+  - enabled: 1
+    path: Assets/Scenes/Main Game.unity
+    guid: 12e01006ae87cfe48a7adefc4ea84ea4
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpPad : MonoBehaviour
 {
-    public float launchForce = 10f; // The force to apply when jumping off the pad
+    public float launchForce = 20.0f; // The force to apply when jumping off the pad
 
     private Vector3 playerVelocity;
 
