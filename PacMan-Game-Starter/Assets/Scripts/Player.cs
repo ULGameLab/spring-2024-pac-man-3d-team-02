@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
         {
             SetStaminaBarColor(Color.red);
         }
-        else if (HealthBarImage.fillAmount < 0.7f)
+        else if (StaminaImage.fillAmount < 0.7f)
         {
             SetStaminaBarColor(Color.yellow);
         }

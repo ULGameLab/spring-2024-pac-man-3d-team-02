@@ -5,18 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //Onclick function to quit game
     public void QuitGameButton() {
         #if UNITY_EDITOR
@@ -55,6 +43,9 @@ public class Buttons : MonoBehaviour
     }
 
     public void ToMainGame() {
+        PelletCount.numPelletsCollected = 0;
+        Player.health = 100.0f;
+        Player.stamina = 100.0f;
         SceneManager.LoadScene("Main Game");
     }
 }
